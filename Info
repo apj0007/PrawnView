@@ -1,9 +1,0 @@
-PrawnVIEW
-
-Proyecto de fin de carrera en el cual se desarrollará una parte de un proyecto de automatización.
-El proyecto final se trata de recibir en una cinta la materia prima (en este caso langostinos) separada por vibración, 
-y con la ayuda de un autómata colocar la parte visible de una caja de langostinos, donde estos deben ofrecer al consumidor final 
-una apariencia alineada y en dos filas. En estos momentos para esa tarea la empresa Gambastar S.L. cuenta con 8 personas.
-
-Con PrawnView lo que se desarrollará será la primera fase, donde debemos visualizar, localizar y contar los individuos. 
-Con esto ya se podría conocer la posición de los individuos para su posterior manipulación por parte del autómata. 
