@@ -1,3 +1,5 @@
 Creacion Contribution
+Agregar Tutor como colaborador
+Crear carpetas github
 Localizar cabeza gamba
 Incluir movimiento de la cinta
