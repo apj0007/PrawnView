@@ -4,3 +4,5 @@ Crear carpetas github
 Localizar cabeza gamba
 Incluir movimiento de la cinta
 Forma de subir el código de forma correcta
+Testear el código sonarqube
+Medición de código con la herramienta Source Monitor
