@@ -3,3 +3,4 @@ Agregar Tutor como colaborador
 Crear carpetas github
 Localizar cabeza gamba
 Incluir movimiento de la cinta
+Forma de subir el código de forma correcta
