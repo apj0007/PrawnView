@@ -1,26 +1,26 @@
 PrawnVIEW
 
-Definición
+Definition
 
-Proyecto de fin de carrera en el cual se desarrollará una parte de un proyecto de automatización.
-El proyecto final se trata de recibir en una cinta la materia prima (en este caso langostinos) separada por vibración, 
-y con la ayuda de un autómata colocar la parte visible de una caja de langostinos, donde estos deben ofrecer al consumidor final 
-una apariencia alineada y en dos filas. En estos momentos para esa tarea la empresa Gambastar S.L. cuenta con 8 personas.
+Final year project in which part of an automation project will be developed.
+The final project is about receiving the raw material (in this case shrimp) separated by vibration on a tape,
+and with the help of an automaton place the visible part of a box of prawns, where they must offer the final consumer
+an appearance aligned and in two rows. In these moments for that task the company Gambastar S.L. has 8 people.
 
-Con PrawnView lo que se desarrollará será la primera fase, donde debemos visualizar, localizar y contar los individuos. 
-Con esto ya se podría conocer la posición de los individuos para su posterior manipulación por parte del autómata. 
+With PrawnView what will be developed will be the first phase, where we must visualize, locate and count the individuals.
+With this we could already know the position of the individuals for their subsequent manipulation by the automaton.
 
-DISTRIBUCIONES
+DISTRIBUTIONS
 
-USO
-
-
-Publicaciones
+USE
 
 
-Autor
-•	Andrés Pérez Juárez
+Publications
+
+
+Author
+• Andrés Pérez Juárez
 
 
 Tutor
-•	Jose Francisco Diaz Pastor
+• Jose Francisco Diaz Pastor
