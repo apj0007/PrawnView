@@ -1,7 +1,10 @@
 
-Encontrar parámetro para reconocer dos gambas juntas
+Pendiente SPRINT_2-Encontrar parámetro para reconocer dos gambas juntas
 Localizar cabeza gamba
 Incluir movimiento de la cinta
 
 Testear el código sonarqube
 Medición de código con la herramienta Source Monitor
+
+________________PENDIENTE___________________
+Pendiente SPRINT_2-Encontrar parámetro para reconocer dos gambas juntas
