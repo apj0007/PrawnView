@@ -13,7 +13,7 @@ def leer_mostrar_imagen(file,debug=False):
 def muestra_imagenes(imagenes):
   num_images = len(imagenes)
   if num_images<2:
-    print("Se debe pasar más de una imagen")
+    #print("Se debe pasar más de una imagen")
     return 0
   
   lado = math.ceil(num_images**0.5)
