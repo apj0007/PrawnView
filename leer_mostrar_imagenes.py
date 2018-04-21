@@ -1,3 +1,8 @@
+import matplotlib.pyplot as plt 
+import math
+from skimage.io import imread
+from skimage import io
+
 def leer_mostrar_imagen(file,debug=False):
 
   img =imread(file)
@@ -6,7 +11,6 @@ def leer_mostrar_imagen(file,debug=False):
   return img
 
 def muestra_imagenes(imagenes):
-  import math
   num_images = len(imagenes)
   if num_images<2:
     print("Se debe pasar más de una imagen")
