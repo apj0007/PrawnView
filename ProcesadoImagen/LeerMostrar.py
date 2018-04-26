@@ -4,16 +4,16 @@ from skimage.io import imread
 from skimage import io
 class ImplementacionLecturaMuestraDeImagen():
     """
-    Clase que contiene las clases para leer una imagen y mostrarla por pantalla     en grande o en pequeño.
+    Clase que contiene las clases para leer una imagen y mostrarla por pantalla     en grande o en pequeÃ±o.
     
-    @author: Andrés Pérez Juárez
+    @author: AndrÃ©s PÃ©rez JuÃ¡rez
     @version: 1.3
     """
     
     @classmethod
     def leer_mostrar_imagen(self,file):
         """
-        Función que permite leer y mostrar una imagen cargada
+        FunciÃ³n que permite leer y mostrar una imagen cargada
         
         @param file: imagen que se desea leer
  
@@ -28,16 +28,16 @@ class ImplementacionLecturaMuestraDeImagen():
     @classmethod
     def muestra_imagenes(self,imagenes,grandes=False):
         """
-        Función que permite mostrar varias imágenes, deben ser mas de 2 y se pueden mostrar en tamaño grande o más pequeño
+        FunciÃ³n que permite mostrar varias imÃ¡genes, deben ser mas de 2 y se pueden mostrar en tamaÃ±o grande o mÃ¡s pequeÃ±o
 
-        @param imagenes: Lista con las imágenes que se desea mostrar
-        @param grandes: Boolean, que por defecto se encuentra a False, si esta en True mostrará las imagenes en tamaño grande
+        @param imagenes: Lista con las imÃ¡genes que se desea mostrar
+        @param grandes: Boolean, que por defecto se encuentra a False, si esta en True mostrarÃ¡ las imagenes en tamaÃ±o grande
 
         """
 
         num_images = len(imagenes)
         if num_images<2:
-            print("Se debe pasar más de una imagen")
+            print("Se debe pasar mÃ¡s de una imagen")
             return 0
         if grandes:
             c=round(num_images/2)
