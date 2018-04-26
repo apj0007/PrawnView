@@ -1,1 +1,1 @@
-from PrawnView.ProcesadoImagen import ImplementacionLecturaMuestraDeImagen
+from PrawnView.ProcesadoImagen import LeerMostrar
