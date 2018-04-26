@@ -11,7 +11,7 @@ class ImplementacionLecturaMuestraDeImagen():
     """
     
     @classmethod
-    def leer_mostrar_imagen(file):
+    def leer_mostrar_imagen(self,file):
         """
         Función que permite leer y mostrar una imagen cargada
         
@@ -26,7 +26,7 @@ class ImplementacionLecturaMuestraDeImagen():
         return img
 
     @classmethod
-    def muestra_imagenes(imagenes,grandes=False):
+    def muestra_imagenes(self,imagenes,grandes=False):
         """
         Función que permite mostrar varias imágenes, deben ser mas de 2 y se pueden mostrar en tamaño grande o más pequeño
 
