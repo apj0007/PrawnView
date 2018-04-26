@@ -1,0 +1,1 @@
+from PrawnView.ProcesadoImagen import ImplementacionLecturaMuestraDeImagen
