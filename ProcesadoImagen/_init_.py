@@ -1,1 +1,2 @@
-from PrawnView.ProcesadoImagen import LeerMostrar
+from PrawnView.ProcesadoImagen.LeerMostrar import LeerMostrar
+from PrawnView.ProcesadoImagen.ProcesadoImagenAutomatico import ProcesadoImagenAutomatico
