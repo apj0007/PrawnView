@@ -1,2 +1,3 @@
 from PrawnView.ProcesadoImagen.LeerMostrar import LeerMostrar
+from PrawnView.descargar_extraer_zip import extraer_zip,descargar_zip_url
 from PrawnView.ProcesadoImagen.ProcesadoImagenAutomatico import ProcesadoImagenAutomatico
