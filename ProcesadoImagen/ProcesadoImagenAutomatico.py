@@ -1,5 +1,5 @@
-from prawnvieW.ProcesadoImagen.LeerMostrar import LeerMostrar
-from prawnvieW.descargar_extraer_zip import extraer_zip,descargar_zip_url
+from Prawnview.ProcesadoImagen.LeerMostrar import LeerMostrar
+from Prawnview.descargar_extraer_zip import extraer_zip,descargar_zip_url
 
 class ProcesadoImagenAutomatico():
 
