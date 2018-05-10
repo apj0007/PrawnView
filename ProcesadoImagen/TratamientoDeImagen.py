@@ -27,7 +27,7 @@ from skimage import io,color,util
 from skimage.morphology import skeletonize,skeletonize_3d
 from skimage.color import rgb2lab
 
-class LeerMostrar():
+class TratamientoDeImagen():
     """
     Clase que contiene las clases para leer una imagen y mostrarla por pantalla     en grande o en pequeÃ±o.
     
