@@ -1,4 +1,4 @@
-from PrawnView.ProcesadoImagen.LeerMostrar import LeerMostrar,muestra_imagenes
+from PrawnView.ProcesadoImagen.LeerMostrar import LeerMostrar
 from PrawnView.ProcesadoImagen.ProcesarZip import ProcesarZip
 from PrawnView.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
 
