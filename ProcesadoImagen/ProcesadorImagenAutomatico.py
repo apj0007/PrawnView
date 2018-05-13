@@ -1,4 +1,4 @@
-from ProcesadoImagen.LeeImagen import LeeImagen
+from PrawnView.ProcesadoImagen.LeeImagen import LeeImagen
 
 class ProcesadorImagenAutomatico():
 
