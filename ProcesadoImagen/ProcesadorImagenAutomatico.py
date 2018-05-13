@@ -12,7 +12,7 @@ class ProcesadorImagenAutomatico():
     self.pr_LeeImagen=LeeImagen()
 
     
-    pr_leer_imagen.leer_imagen(img)
-    pr_leer_imagen.muestra_imagenes(img,img)
+    pr_LeeImagen.leer_imagen(img)
+    pr_LeeImagen.muestra_imagenes(img,img)
 
  
