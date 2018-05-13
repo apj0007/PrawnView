@@ -1,6 +1,6 @@
 from PrawnView.ProcesadoImagen.LeerMostrar import LeerMostrar
 #from PrawnView.ProcesadoImagen.ProcesarZip import ProcesarZip
-from PrawnView.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
+#from PrawnView.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
 
 class ProcesadorImagenAutomatico():
 
