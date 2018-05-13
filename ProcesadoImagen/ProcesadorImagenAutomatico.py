@@ -15,11 +15,11 @@ class ProcesadorImagenAutomatico():
   def __init__(self):
     self.pr_leerMostrar=LeerMostrar()
     
-  @classmethod  
+
   def y(self,img):
     self.ProcesadoImagen(img)
 
-  @classmethod
+
   def ProcesadoImagen(self,img):
     self.pr_leerMostrar=LeerMostrar()
     self.pr_leerMostrar.leer_mostrar_imagen(img)
