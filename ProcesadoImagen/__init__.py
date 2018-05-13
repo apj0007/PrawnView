@@ -1,2 +1,3 @@
-from ProcesadoImagen.LeerMostrar import LeerMostrar
+from ProcesadoImagen.LeeImagen import LeeImagen
+#from ProcesadoImagen.ProcesarZip import ProcesarZip
 from ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
