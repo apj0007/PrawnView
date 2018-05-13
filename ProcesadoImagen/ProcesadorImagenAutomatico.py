@@ -1,4 +1,4 @@
-from PrawnView.ProcesadoImagen.LeerMostrar import LeerMostrar
+from ProcesadoImagen.LeerMostrar import LeerMostrar
 
 class ProcesadorImagenAutomatico():
 
