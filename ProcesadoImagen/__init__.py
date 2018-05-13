@@ -1,3 +1,3 @@
 from ProcesadoImagen.LeeImagen import LeeImagen
-#from ProcesadoImagen.ProcesarZip import ProcesarZip
+from ProcesadoImagen.EntradaZip import EntradaZip
 from ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
