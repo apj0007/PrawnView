@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import math
 from skimage.io import imread
 from skimage import io
-class LeerMostrar():
+class LeeImagen():
     """
     Clase que contiene las clases para leer una imagen y mostrarla por pantalla     en grande o en pequeño.
     
@@ -11,18 +11,15 @@ class LeerMostrar():
     """
     
     @classmethod
-    def leer_mostrar_imagen(self,file):
+    def leer_imagen(self,file):
         """
-        Función que permite leer y mostrar una imagen cargada
+        Función que permite leer  una imagen cargada
         
         @param file: imagen que se desea leer
  
         @return: se deuelve la imagen ya leida en python
         """
-
         img =imread(file)
-        plt.subplot(211)
-        io.imshow(img)
         return img
 
     @classmethod
