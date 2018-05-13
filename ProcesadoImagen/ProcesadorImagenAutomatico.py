@@ -10,7 +10,7 @@ class ProcesadorImagenAutomatico():
     self.pr_leerMostrar.leer_mostrar_imagen(img)
 '''
     
-class ProcesadorImagenAutomatico:
+class ProcesadorImagenAutomatico():
 
   def __init__(self):
     self.pr_leerMostrar=LeerMostrar()
