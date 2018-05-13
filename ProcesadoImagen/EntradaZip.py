@@ -5,7 +5,7 @@ import zipfile
 class EntradaZip():
   
   @classmethod
-  def descargar_zip_url(url):
+  def descargar_zip_url(self,url):
     # Nombre del archivo a partir del URL
     zipname = url[url.rfind("/") + 1:]
     while not zipname:
@@ -25,11 +25,11 @@ class EntradaZip():
     print ("Descargado correctamente.",zipname)
 
     print (zipname, zipfile.is_zipfile(zipname))
-    return zipname
+    self.extraer_zip(zipname)
 
   @classmethod
   # abre y extrae todos los ficheros en un zip  
-  def extraer_zip(zipname):
+  def extraer_zip(self,zipname):
     password = None
     z = zipfile.ZipFile(zipname, "r")
     try:
