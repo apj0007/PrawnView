@@ -2,7 +2,7 @@ from urllib import request
 import zipfile
 
 #Función que descarga un archivo de internet
-class procesarZip():
+class EntradaZip():
   
   @classmethod
   def descargar_zip_url(url):
