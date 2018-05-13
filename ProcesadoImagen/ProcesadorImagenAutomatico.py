@@ -6,11 +6,10 @@ class ProcesadorImagenAutomatico():
     self.pr_leerMostrar=LeerMostrar()
     print("init")
   @classmethod
-  def ProcesadorAutomatico(img):
+  def ProcesadorAutomatico(self,img):
     print("1")
-    #self.pr_leerMostrar=LeerMostrar()
+    self.pr_leerMostrar=LeerMostrar()
     print("2")
-    LeerMostrar.leer_mostrar_imagen(img)
-    #self.pr_leerMostrar.leer_mostrar_imagen(img)
+    self.pr_leerMostrar.leer_mostrar_imagen(img)
 
  
