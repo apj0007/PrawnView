@@ -4,6 +4,7 @@ class ProcesadorImagenAutomatico():
 
   def __init__(self):
     self.pr_leer_imagen=leer_imagen()
+    self.pr_leer_imagen=muestra_imagenes()
 
   @classmethod
   def ProcesadorAutomatico(self,img):
