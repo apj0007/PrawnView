@@ -13,6 +13,6 @@ class ProcesadorImagenAutomatico():
 
     
     img=self.pr_LeeImagen.leer_imagen(path)
-    self.pr_LeeImagen.muestra_imagenes(img,img)
+    self.pr_LeeImagen.muestra_imagenes([img,img])
 
  
