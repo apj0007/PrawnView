@@ -1,15 +1,16 @@
-from ProcesadoImagen.LeerMostrar import LeerMostrar
+from ProcesadoImagen.LeeImagen import LeeImagen
 
 class ProcesadorImagenAutomatico():
 
   def __init__(self):
-    self.pr_leerMostrar=LeerMostrar()
-    print("init")
+    self.pr_leer_imagen=leer_imagen()
+
   @classmethod
   def ProcesadorAutomatico(self,img):
-    print("1")
-    self.pr_leerMostrar=LeerMostrar()
-    print("2")
-    self.pr_leerMostrar.leer_mostrar_imagen(img)
+
+    self.pr_leer_imagen=leer_imagen()
+    self.pr_leer_imagen=muestra_imagenes()
+    
+    pr_leer_imagen.leer_imagen(img)
 
  
