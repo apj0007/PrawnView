@@ -1,3 +1,3 @@
-from ProcesadoImagen.LeeImagen import LeeImagen
-from ProcesadoImagen.EntradaZip import EntradaZip
-from ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
+from PrawnView.ProcesadoImagen.LeeImagen import LeeImagen
+from PrawnView.ProcesadoImagen.EntradaZip import EntradaZip
+from PrawnView.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
