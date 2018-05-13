@@ -1,4 +1,5 @@
 from PrawnView.ProcesadoImagen.LeeImagen import LeeImagen
+from PrawnView.ProcesadoImagen.EntradaZip import EntradaZip
 
 class ProcesadorImagenAutomatico():
 
