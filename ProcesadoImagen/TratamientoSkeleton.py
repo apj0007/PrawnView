@@ -58,7 +58,7 @@ class TratamientoSkeleton():
   @classmethod
   def detectar_region(self,im):
     centro_region=[]
-    area_region=[]
+    area_total=0
     # eliminacio de  artefactos conectados al borde de la imagen
     cleared = clear_border(im)
 
@@ -70,7 +70,7 @@ class TratamientoSkeleton():
     ax.imshow(image_label_overlay)
 
     for region in regionprops(label_image):
-        area_region.append(region.area)
+        area_total=area_total+region.area
         # Tamaño escogido para las areas que queremos seleccionar
         if region.area >= 5:
             # Dibujo de los segmentos usando los valores de minr, minc, maxr, maxc
@@ -87,7 +87,7 @@ class TratamientoSkeleton():
     ax.set_axis_off()
     plt.tight_layout()
     plt.show()
-    return centro_region,area_region
+    return centro_region,area_total
   
   @classmethod
   
