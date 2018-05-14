@@ -1,4 +1,5 @@
 from PrawnView.ProcesadoImagen.LeeImagen import LeeImagen
 from PrawnView.ProcesadoImagen.EntradaZip import EntradaZip
 from PrawnView.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
+from PrawnView.ProcesadoImagen.TratamientoSkeleton import TratamientoSkeleton
 from PrawnView.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
