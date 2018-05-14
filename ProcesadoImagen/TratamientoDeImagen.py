@@ -57,10 +57,10 @@ class TratamientoDeImagen():
       return img_gris
     
     @classmethod
-    '''
-    Comparar contra colores de fondo
-    lo que fuese fondo sería oscuro en la imagen de salida
-    '''
+
+    #Comparar contra colores de fondo
+    #lo que fuese fondo sería oscuro en la imagen de salida
+    
     def escala_grises3(img,color, debug=False): 
       imagenLab = rgb2lab(img)
       colorLab = pixelRGB2LAB(color)
