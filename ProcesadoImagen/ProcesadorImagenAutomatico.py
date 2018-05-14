@@ -17,7 +17,7 @@ class ProcesadorImagenAutomatico():
 
     
     img=self.pr_LeeImagen.leer_imagen(path)
-    gray=self.pr_TratamientoDeImagen.escala_grises1(img)
+    gray=self.pr_TratamientoDeImagen.escala_grises(img)
     binary=self.pr_TratamientoDeImagen.binarizar(gray)
     
     self.pr_LeeImagen.muestra_imagenes([img,gray],binary)
