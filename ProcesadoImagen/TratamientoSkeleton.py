@@ -36,7 +36,7 @@ import math
 class TratamientoSkeleton():
   
   @classmethod
-  def deteccion_ojo(frame):  
+  def detectar_ojo(self,frame):  
     img_gray= cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #Convertir a HSV
 
@@ -56,8 +56,9 @@ class TratamientoSkeleton():
     return Erosion
   
   @classmethod
-  def detector_region(im):
+  def detectar_region(self,im):
     centro_region=[]
+    area_region=[]
     # eliminacio de  artefactos conectados al borde de la imagen
     cleared = clear_border(im)
 
@@ -69,6 +70,7 @@ class TratamientoSkeleton():
     ax.imshow(image_label_overlay)
 
     for region in regionprops(label_image):
+        area_region.append(region.area)
         # Tamaño escogido para las areas que queremos seleccionar
         if region.area >= 5:
             # Dibujo de los segmentos usando los valores de minr, minc, maxr, maxc
@@ -85,7 +87,7 @@ class TratamientoSkeleton():
     ax.set_axis_off()
     plt.tight_layout()
     plt.show()
-    return centro_region
+    return centro_region,area_region
   
   @classmethod
   
