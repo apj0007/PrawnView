@@ -36,24 +36,20 @@ class TratamientoDeImagen():
     """
     
     @classmethod
-    def erosionar(grey): 
+    def erosionar(self,grey): 
       kernel = np.ones((5,5), np.uint8)
-      img_erosion = cv2.erode(grey, kernel, iterations=1)
-  
+      img_erosion = cv2.erode(grey, kernel, iterations=1) 
       return img_erosion
 
     @classmethod
-    def elimina_ruido(grey):
+    def elimina_ruido(self,grey):
       greym = ndimage.gaussian_filter(grey, 2)
       return greym
     
     @classmethod
-    def escala_grises1(img, mostrar=False):
+    def escala_grises(self,img):
       img = color.rgb2gray(img)
-      img_gris=elimina_ruido(img)
-      if mostrar:
-        muestra_imagenes([img, img_gris])
-
+      img_gris=self.elimina_ruido(img)
       return img_gris
     
     @classmethod
@@ -61,46 +57,37 @@ class TratamientoDeImagen():
     #Comparar contra colores de fondo
     #lo que fuese fondo sería oscuro en la imagen de salida
     
-    def escala_grises3(img,color, debug=False): 
+    def escala_grises3(self,img,color): 
       imagenLab = rgb2lab(img)
       colorLab = pixelRGB2LAB(color)
       img_gris = abs(imagenLab-color).mean(axis=2)/255
-      if debug:
-        muestra_imagenes([img, img_gris])
-
       return img_gris
     
     @classmethod
-    def op_morfologicas(binary):
+    def op_morfologicas(self,binary):
       binary = dilation(binary, square(12))
       binary = opening(binary, square(25))  
       binary = erosion(binary, square(8))
-
       return binary
     
     #Si se desea imprimir la imagen se debe enviar True
     @classmethod
-    def binarizar(gray,mostrar=False):
+    def binarizar(self,gray):
       thresh = threshold_otsu(gray)
       binary = gray > thresh
-      binary=op_morfologicas(binary)
-      if mostrar:
-        muestra_imagenes([gray, binary],True)
+      binary=self.op_morfologicas(binary)
       return binary
     
     @classmethod
-    def invertirbinarizar1(binary):
+    def invertirbinarizar1(self,binary):
       inbin = util.invert(binary)
-      muestra_imagenes([binary,inbin])
       return inbin
 
     @classmethod
     #Si deseamos enviar la imagen binaria sin invertir se pone binary a True
-    def skeleton(data,is_binary=False):
+    def skeleton(self,data,is_binary=False):
       if is_binary:
         data = invert(data) 
       skeleton3d = skeletonize_3d(data)
       skeleton3d = dilation(skeleton3d, square(3))
-      muestra_imagenes([data,skeleton3d])
- 
       return skeleton3d
