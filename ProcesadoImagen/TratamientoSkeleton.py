@@ -53,42 +53,43 @@ class TratamientoSkeleton():
     
     return Erosion
 
- @classmethod
- def detectar_region(im,imgBN,k=False):
-    centro_region=[]
-    area_total=0
+  @classmethod
+  def detectar_region(im,imgBN,k=False):
+     centro_region=[]
+     area_total=0
+     
+      # crea una figura con dos subfiguras
+     fig, ax = plt.subplots(ncols=2, nrows=1, figsize=(16, 16))
+     
+     # hace las etiquetas de los ejes invisibles
+     ax[0].yaxis.set_visible(False)
+     ax[0].xaxis.set_visible(False)
     
-    # crea una figura con dos subfiguras
-    fig, ax = plt.subplots(ncols=2, nrows=1, figsize=(16, 16))
+     ax[1].yaxis.set_visible(False)
+     ax[1].xaxis.set_visible(False)
     
-    # hace las etiquetas de los ejes invisibles
-    ax[0].yaxis.set_visible(False)
-    ax[0].xaxis.set_visible(False)
+     # en la primera subfigura está la imagen original
+     ax[0].imshow(im)
     
-    ax[1].yaxis.set_visible(False)
-    ax[1].xaxis.set_visible(False)
-    
-    # en la primera subfigura está la imagen original
-    ax[0].imshow(im)
-    
-    # en la segunda subfigura está la imagen en blanco y negro con las regiones encontradas
-    ax[1].imshow(imgBN, cmap=plt.cm.gray)
+     # en la segunda subfigura está la imagen en blanco y negro con las regiones encontradas
+     ax[1].imshow(imgBN, cmap=plt.cm.gray)
     
     
-    # label es la primera función clave, toma una imagen en blanco y negro
-    # y devuelve sus componentes conexas
-    label_image = label(imgBN)
+     # label es la primera función clave, toma una imagen en blanco y negro
+     # y devuelve sus componentes conexas
+     label_image = label(imgBN)
 
-    for region in regionprops(label_image):  
-        area_total=area_total+region.area
+     for region in regionprops(label_image):  
+         area_total=area_total+region.area
 
-        # draw rectangle around segmented regions
-        minr, minc, maxr, maxc = region.bbox
-        centro_region.append([(minr+(maxr-minr)/2),(minc+(maxc-minc)/2)])
-        # draw rectangle around segmented regions
-        rect = mpatches.Rectangle((minc, minr), maxc - minc, maxr - minr,
-                                  fill=False, edgecolor='red', linewidth=1)
-        ax[1].add_patch(rect)
+         # draw rectangle around segmented regions
+         minr, minc, maxr, maxc = region.bbox
+         centro_region.append([(minr+(maxr-minr)/2),(minc+(maxc-minc)/2)])
+         # draw rectangle around segmented regions
+         rect = mpatches.Rectangle((minc, minr), maxc - minc, maxr - minr,
+                                   fill=False, edgecolor='red', linewidth=1)
+         ax[1].add_patch(rect)
 
-    plt.tight_layout()
-    plt.show()
+     plt.tight_layout()
+     plt.show()
+     return centro_region,area_total
