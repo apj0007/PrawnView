@@ -54,35 +54,44 @@ class TratamientoSkeleton():
     return Erosion
   
   @classmethod
-  def detectar_region(self,im):
-    centro_region=[]
-    area_total=0
-    # eliminacio de  artefactos conectados al borde de la imagen
-    cleared = clear_border(im)
 
-    # etiqueta de la region de la imagen
-    label_image = label(cleared)
-    image_label_overlay = label2rgb(label_image, im)
+    def detectar_region(im,imgBN,k=False):
+        centro_region=[]
+        area_total=0
+    
+    # crea una figura con dos subfiguras
+        fig, ax = plt.subplots(ncols=2, nrows=1, figsize=(16, 16))
+    
+    # hace las etiquetas de los ejes invisibles
+        ax[0].yaxis.set_visible(False)
+        ax[0].xaxis.set_visible(False)
+    
+        ax[1].yaxis.set_visible(False)
+        ax[1].xaxis.set_visible(False)
+    
+    # en la primera subfigura está la imagen original
+        ax[0].imshow(im)
+    
+    # en la segunda subfigura está la imagen en blanco y negro con las regiones encontradas
+    a   x[1].imshow(imgBN, cmap=plt.cm.gray)
+    
+    
+    # label es la primera función clave, toma una imagen en blanco y negro
+    # y devuelve sus componentes conexas
+        label_image = label(imgBN)
 
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.imshow(image_label_overlay)
+        for region in regionprops(label_image):  
+            area_total=area_total+region.area
 
-    for region in regionprops(label_image):
-        area_total=area_total+region.area
-        # Tamaño escogido para las areas que queremos seleccionar
-        if region.area >= 5:
-            # Dibujo de los segmentos usando los valores de minr, minc, maxr, maxc
+        # draw rectangle around segmented regions
             minr, minc, maxr, maxc = region.bbox
-            #Localiza las coordenads del centro de la región
-            print('Coordenadas de la región:')
             centro_region.append([(minr+(maxr-minr)/2),(minc+(maxc-minc)/2)])
-            print('minr:',minr,'\nminc:',minc,'\nmaxr:', maxr,'\nmaxc:', maxc)
-            print('______________________________________________________')
+        # draw rectangle around segmented regions
             rect = mpatches.Rectangle((minc, minr), maxc - minc, maxr - minr,
-                                      fill=False, edgecolor='red', linewidth=3)
-            ax.add_patch(rect)
+                                    fill=False, edgecolor='red', linewidth=1)
+            ax[1].add_patch(rect)
 
-    ax.set_axis_off()
-    plt.tight_layout()
-    plt.show()
-    return centro_region,area_total
+        plt.tight_layout()
+        plt.show()
+
+        return centro_region,area_total
