@@ -85,9 +85,8 @@ class TratamientoDeImagen():
 
     @classmethod
     #Si deseamos enviar la imagen binaria sin invertir se pone binary a True
-    def skeleton(self,data,is_binary=False):
-      if is_binary:
-        data = invert(data) 
+    def skeleton(self,data):
+      data = invert(data) 
       skeleton3d = skeletonize_3d(data)
       skeleton3d = dilation(skeleton3d, square(3))
       return skeleton3d
