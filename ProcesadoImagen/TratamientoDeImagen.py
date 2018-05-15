@@ -64,19 +64,19 @@ class TratamientoDeImagen():
       return img_gris
     
     @classmethod
-    def op_morfologicas(self,binary):
-      binary = dilation(binary, square(12))
-      binary = opening(binary, square(25))  
-      binary = erosion(binary, square(8))
-      return binary
+    def op_morfologicas(self,im):
+      im = dilation(im, square(12))
+      im1 = opening(im, square(25))  
+      im2 = erosion(im1, square(8))
+      return im2
     
     #Si se desea imprimir la imagen se debe enviar True
     @classmethod
     def binarizar(self,gray):
       thresh = threshold_otsu(gray)
       binary = gray > thresh
-      binary=self.op_morfologicas(binary)
-      return binary
+      rbinary=self.op_morfologicas(binary)
+      return rbinary
     
     @classmethod
     def invertirbinarizar1(self,binary):
