@@ -23,7 +23,7 @@ class LeeImagen():
         return img
 
     @classmethod
-    def muestra_imagenes(self,imagenes,grandes=False):
+    def muestra_imagenes(self,image):
         """
         Función que permite mostrar varias imágenes, deben ser mas de 2 y se pueden mostrar en tamaño grande o más pequeño
 
@@ -32,28 +32,7 @@ class LeeImagen():
 
         """
 
-        num_images = len(imagenes)
-        if num_images<2:
-            print("Se debe pasar más de una imagen")
-            return 0
-        if grandes:
-            c=round(num_images/2)
-            fig, num_images = plt.subplots(nrows=c, ncols=2, figsize=(16, 8), sharex=True, sharey=True)
-            ax = num_images.ravel()
-            for i in range(len(imagenes)):
-                ax[i].imshow(imagenes[i], cmap=plt.cm.gray, interpolation='nearest')
-                ax[i].axis('off')
+        fig, ax = plt.subplots(figsize=(10, 6))
+        ax.imshow(image)
+        plt.show()
 
-            fig.tight_layout()
-            plt.show()
-
-            return
-        lado = math.ceil(num_images**0.1)
-        tam_image = 7
-  
-        for i in range(len(imagenes)):
-            plt.subplot(lado,lado,i+1)
-            io.imshow(imagenes[i],cmap=plt.cm.gray)
-  
- 
-        io.show()
