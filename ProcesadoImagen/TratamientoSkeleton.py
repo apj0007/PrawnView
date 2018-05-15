@@ -50,9 +50,7 @@ class TratamientoSkeleton():
     #Erosion de la imagen
     kernel = np.ones((6,6),np.uint8) 
     Erosion = cv2.erode(mask,kernel,iterations = 1)
-
-    muestra_imagenes([frame,img_gray,mask,Erosion],True)
-
+    
     return Erosion
   
   @classmethod
