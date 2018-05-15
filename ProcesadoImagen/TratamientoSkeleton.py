@@ -54,7 +54,7 @@ class TratamientoSkeleton():
     return Erosion
   
   @classmetho
-def detectar_region(self,im,imgBN,k=False):
+  def detectar_region(im,imgBN,k=False):
     centro_region=[]
     area_total=0
     
@@ -87,7 +87,7 @@ def detectar_region(self,im,imgBN,k=False):
         centro_region.append([(minr+(maxr-minr)/2),(minc+(maxc-minc)/2)])
         # draw rectangle around segmented regions
         rect = mpatches.Rectangle((minc, minr), maxc - minc, maxr - minr,
-                                    fill=False, edgecolor='red', linewidth=1)
+                                  fill=False, edgecolor='red', linewidth=1)
         ax[1].add_patch(rect)
 
     plt.tight_layout()
