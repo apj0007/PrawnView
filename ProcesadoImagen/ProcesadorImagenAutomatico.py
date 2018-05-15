@@ -22,17 +22,14 @@ class ProcesadorImagenAutomatico():
     img=self.pr_LeeImagen.leer_imagen(path)
     gray=self.pr_TratamientoDeImagen.escala_grises(img)
     binary=self.pr_TratamientoDeImagen.binarizar(gray)
+    invbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
     sk=self.pr_TratamientoDeImagen.skeleton(binary)
     ojo=self.pr_TratamientoSkeleton.detectar_ojo(img)
-    centro_langostino,area_langostino=self.pr_TratamientoSkeleton.detectar_region(binary)
-    centro_regiones,area_total_melanosis=self.pr_TratamientoSkeleton.detectar_region(ojo)
+    centro_langostino,area_langostino=detectar_region(img,invbin)
+    centro_regiones,area_total_melanosis=detectar_region(img,ojo,True)
     
     
     self.pr_LeeImagen.muestra_imagenes(img)
     self.pr_LeeImagen.muestra_imagenes(gray)
     self.pr_LeeImagen.muestra_imagenes(binary)
     self.pr_LeeImagen.muestra_imagenes(sk)
-    
-
-
- 
