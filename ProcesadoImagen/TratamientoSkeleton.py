@@ -17,7 +17,7 @@ from skimage import data,io,color,util
 from skimage.filters import threshold_otsu
 from skimage.segmentation import clear_border
 from skimage.measure import label, regionprops
-from skimage.color import label2rgb,rgb2labdef
+from skimage.color import label2rgb,rgb2lab
 from skimage.feature import canny
 from skimage.util import invert
 from skimage.morphology import closing, opening, erosion, dilation, square, skeletonize,skeletonize_3d
