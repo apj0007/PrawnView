@@ -88,13 +88,3 @@ class TratamientoSkeleton():
     plt.tight_layout()
     plt.show()
     return centro_region,area_total
-  
-  @classmethod
-  
-  
-  
-  @classmethod
-  
-  
-  
-  @classmethod
