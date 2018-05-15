@@ -55,7 +55,7 @@ class TratamientoSkeleton():
   
   @classmethod
 
-    def detectar_region(im,imgBN,k=False):
+    def detectar_region(self,im,imgBN,k=False):
         centro_region=[]
         area_total=0
     
