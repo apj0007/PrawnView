@@ -28,7 +28,11 @@ class ProcesadorImagenAutomatico():
     centro_regiones,area_total_melanosis=self.pr_TratamientoSkeleton.detectar_region(ojo)
     
     
-    self.pr_LeeImagen.muestra_imagenes([img,gray,binary,sk])
+    self.pr_LeeImagen.muestra_imagenes(img)
+    self.pr_LeeImagen.muestra_imagenes(gray)
+    self.pr_LeeImagen.muestra_imagenes(binary)
+    self.pr_LeeImagen.muestra_imagenes(sk)
+    
 
 
  
