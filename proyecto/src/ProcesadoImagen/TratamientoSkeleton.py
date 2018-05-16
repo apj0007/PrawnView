@@ -33,7 +33,7 @@ from PIL import Image
 
 import math
 
-class TratamientoSkeleton():
+class TratamientoRegiones():
   
   @classmethod
   def detectar_ojo(self,frame):  
