@@ -26,7 +26,7 @@ class ProcesadorImagenAutomatico():
     sk=self.pr_TratamientoDeImagen.skeleton(binary)
     ojo=self.pr_TratamientoSkeleton.detectar_ojo(img)
     centro_langostino,area_langostino=self.pr_TratamientoSkeleton.detectar_region(img,invbin)
-    centro_regiones,area_total_melanosis=self.pr_TratamientoSkeleton.detectar_region(img,ojo,True)
+    centro_regiones,area_total_melanosis=self.pr_TratamientoSkeleton.detectar_region(img,ojo)
     
     
     self.pr_LeeImagen.muestra_imagenes(img)
