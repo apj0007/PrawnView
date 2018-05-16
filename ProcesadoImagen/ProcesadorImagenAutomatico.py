@@ -33,3 +33,6 @@ class ProcesadorImagenAutomatico():
     self.pr_LeeImagen.muestra_imagenes(gray)
     self.pr_LeeImagen.muestra_imagenes(binary)
     self.pr_LeeImagen.muestra_imagenes(sk)
+    
+    print("\ncentro_langostino",centro_langostino,"\narea_langostino",area_langostino)
+    print("\ncentro_regiones",centro_regiones,"\narea_total_melanosis",area_total_melanosis)
