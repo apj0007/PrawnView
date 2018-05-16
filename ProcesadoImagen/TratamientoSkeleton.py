@@ -58,31 +58,32 @@ class TratamientoSkeleton():
     centro_region=[]
     area_total=0
 
-      # crea una figura con dos subfiguras
-      fig, ax = plt.subplots(ncols=2, nrows=1, figsize=(16, 16))
+    # crea una figura con dos subfiguras
+      
+    fig,ax=plt.subplots(ncols=2, nrows=1, figsize=(16, 16))
 
-      # hace las etiquetas de los ejes invisibles
-      ax[0].yaxis.set_visible(False)
-      ax[0].xaxis.set_visible(False)
+    # hace las etiquetas de los ejes invisibles
+    ax[0].yaxis.set_visible(False)
+    ax[0].xaxis.set_visible(False)
 
 
-      ax[1].yaxis.set_visible(False)
-      ax[1].xaxis.set_visible(False)
+    ax[1].yaxis.set_visible(False)
+    ax[1].xaxis.set_visible(False)
 
 
      # en la primera subfigura está la imagen original
 
-      ax[0].imshow(im)
+    ax[0].imshow(im)
 
-      # en la segunda subfigura está la imagen en blanco y negro con las regiones encontradas
-      ax[1].imshow(imgBN, cmap=plt.cm.gray)
+    # en la segunda subfigura está la imagen en blanco y negro con las regiones encontradas
+    ax[1].imshow(imgBN, cmap=plt.cm.gray)
 
 
         # label es la primera función clave, toma una imagen en blanco y negro
         # y devuelve sus componentes conexas
-      label_image = label(imgBN)
+    label_image = label(imgBN)
 
-      for region in regionprops(label_image):  
+    for region in regionprops(label_image):  
         area_total=area_total+region.area
 
         # draw rectangle around segmented regions
@@ -93,7 +94,6 @@ class TratamientoSkeleton():
                                           fill=False, edgecolor='red', linewidth=1)
         ax[1].add_patch(rect)
 
-      plt.tight_layout()
-      plt.show()
-
-      return centro_region,area_total
+    plt.tight_layout()
+    plt.show()
+    return centro_region,area_total
