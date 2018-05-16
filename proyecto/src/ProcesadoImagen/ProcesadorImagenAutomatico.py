@@ -1,7 +1,7 @@
-from PrawnView.ProcesadoImagen.LeeImagen import LeeImagen
-from PrawnView.ProcesadoImagen.EntradaZip import EntradaZip
-from PrawnView.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
-from PrawnView.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
+from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
+from PrawnView.proyecto.src.ProcesadoImagen.EntradaZip import EntradaZip
+from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
+from PrawnView.proyecto.src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
 
 class ProcesadorImagenAutomatico():
 
