@@ -1,14 +1,14 @@
 from PrawnView.ProcesadoImagen.LeeImagen import LeeImagen
 from PrawnView.ProcesadoImagen.EntradaZip import EntradaZip
 from PrawnView.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
-from PrawnView.ProcesadoImagen.TratamientoSkeleton import TratamientoSkeleton
+from PrawnView.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
 
 class ProcesadorImagenAutomatico():
 
   def __init__(self):
     self.pr_LeeImagen=LeeImagen()
     self.pr_TratamientoDeImagen=TratamientoDeImagen()
-    self.pr_TratamientoSkeleton=TratamientoSkeleton()
+    self.pr_TratamientoRegiones=TratamientoRegiones()
 
 
   @classmethod
@@ -16,7 +16,7 @@ class ProcesadorImagenAutomatico():
 
     self.pr_LeeImagen=LeeImagen()
     self.pr_TratamientoDeImagen=TratamientoDeImagen()
-    self.pr_TratamientoSkeleton=TratamientoSkeleton()
+    self.pr_TratamientoRegiones=TratamientoRegiones()
 
     
     img=self.pr_LeeImagen.leer_imagen(path)
@@ -24,9 +24,9 @@ class ProcesadorImagenAutomatico():
     binary=self.pr_TratamientoDeImagen.binarizar(gray)
     invbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
     sk=self.pr_TratamientoDeImagen.skeleton(binary)
-    ojo=self.pr_TratamientoSkeleton.detectar_ojo(img)
-    centro_langostino,area_langostino=self.pr_TratamientoSkeleton.detectar_region(img,invbin)
-    centro_regiones,area_total_melanosis=self.pr_TratamientoSkeleton.detectar_region(img,ojo)
+    ojo=self.pr_TratamientoRegiones.detectar_ojo(img)
+    centro_langostino,area_langostino=self.pr_TratamientoRegiones.detectar_region(img,invbin)
+    centro_regiones,area_total_melanosis=self.pr_TratamientoRegiones.detectar_region(img,ojo)
     
     
     self.pr_LeeImagen.muestra_imagenes(img)
