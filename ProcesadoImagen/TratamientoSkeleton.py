@@ -54,7 +54,7 @@ class TratamientoSkeleton():
     return Erosion
 
   @classmethod
-  def detectar_region(im,imgBN):
+  def detectar_region(self,im,imgBN):
     centro_region=[]
     area_total=0
 
