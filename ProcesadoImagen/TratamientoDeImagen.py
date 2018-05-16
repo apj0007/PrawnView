@@ -90,3 +90,28 @@ class TratamientoDeImagen():
       skeleton3d = skeletonize_3d(data)
       skeleton3d = dilation(skeleton3d, square(3))
       return skeleton3d
+    '''
+    Función que transforma un número en base 255 en otro en base 1.
+    '''
+    @classmethod
+    def base1(self,num):
+        valorEnBase255 = num
+        valorEnBase1 = (valorEnBase255/255)*1
+        return valorEnBase1
+
+    '''
+    Función para pasar un pixel de RGB a CIELAB
+
+    CIELAB es más apropiado para hacer diferencia de colores
+    '''
+    @classmethod
+    def pixelRGB2LAB(self,pixel):
+        r,g,b = pixel # pixel es una lista con 3 valores, los puedo guardar en 3 variables asi
+        rBase1 = base1(r)
+        gBase1 = base1(g)
+        bBase1 = base1(b)
+
+
+        # rgb2lab espera una lista3D, así que le paso el pixel dentro 
+        # de una lista de listas y para sacarlo igual.
+        return rgb2lab([[[rBase1,gBase1,bBase1]]])[0][0]
