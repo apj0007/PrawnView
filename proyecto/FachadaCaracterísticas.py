@@ -25,7 +25,8 @@ class FachadaCaracterísticas():
       los objetos que tendremos que usar mas adelante en la clase.
       """
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
-        
+    
+    @classmethod
     def ratio(self):
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
       areag,aream=ProcesadorImagenAutomatico.ProcesadorAutomatico()
