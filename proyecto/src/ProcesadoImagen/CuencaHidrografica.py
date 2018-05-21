@@ -51,10 +51,10 @@ class CuencaHidrografica():
       image=self.reducirImagen(image)
       
       ## uso un color anaranjado como referencia
-      grey = self.pr_TratamientoDeImag.escala_grises3(img1,[ 247,211,114])
+      gray = self.pr_TratamientoDeImagen.escala_grises3(img1,[ 247,211,114])
 
       global_thresh = self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
-      binary = grey < global_thresh
+      binary = gray < global_thresh
     
     
     
