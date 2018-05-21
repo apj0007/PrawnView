@@ -55,7 +55,7 @@ class CuencaHidrografica():
       binary = gray < global_thresh
 
 
-      segmentos=self.cuenca(img,binary)
+      segmentos=self.cuenca(image,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
       self.descartarNoValidos(segmentos_validos,segmentos)
       combinaciones=self.combinarSegmentos(segmentos_validos)
