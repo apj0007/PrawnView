@@ -22,11 +22,9 @@ from skimage.filters import threshold_otsu, threshold_local,sobel
 from skimage.segmentation import felzenszwalb, slic, quickshift, watershed, mark_boundaries
 from skimage.util import img_as_float
 
-from PrawnView.proyecto.src.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
 from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
-from PrawnView.proyecto.src.ProcesadoImagen.EntradaZip import EntradaZip
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
-from PrawnView.proyecto.FachadaCaracterísticas import FachadaCaracterísticas
+
 
 class CuencaHidrografica():
     """
