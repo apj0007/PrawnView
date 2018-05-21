@@ -56,7 +56,7 @@ class CuencaHidrografica():
 
 
       fig, ax = plt.subplots()
-      ax.imshow(binary)
+      ax.imshow(image)
 
      
       img = img_as_float(binary)
