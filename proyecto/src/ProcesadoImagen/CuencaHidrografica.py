@@ -51,9 +51,11 @@ class CuencaHidrografica():
       image=self.reducirImagen(image)
       
       gray=self.pr_TratamientoDeImagen.escala_grises(image)
+      self.pr_LeeImagen.muestra_imagenes(gray)
       global_thresh = self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
+      self.pr_LeeImagen.muestra_imagenes(global_thresh)
       binary = gray < global_thresh
-
+      self.pr_LeeImagen.muestra_imagenes(binary)
 
       segmentos=self.cuenca(image,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
