@@ -51,8 +51,13 @@ class CuencaHidrografica():
       self.reducirImagen(image)
       
       gray=self.pr_TratamientoDeImagen.escala_grises(image)
-      binary=self.pr_TratamientoDeImagen.binarizar(gray)
-      binary=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
+      global_thresh = self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
+      binary = gray < global_thresh
+
+
+      fig, ax = plt.subplots()
+      ax.imshow(binary)
+
      
       img = img_as_float(binary)
 
