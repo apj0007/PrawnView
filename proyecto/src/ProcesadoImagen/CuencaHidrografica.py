@@ -48,7 +48,7 @@ class CuencaHidrografica():
       
            
       image=self.pr_LeeImagen.leer_imagen(image)
-      self.reducirImagen(image)
+      image=self.reducirImagen(image)
       
       gray=self.pr_TratamientoDeImagen.escala_grises(image)
       global_thresh = self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
@@ -90,10 +90,7 @@ class CuencaHidrografica():
       # Con la imagen de 6 langostinos me hacen falta más markers, sino se escapa alguno
       # para las otras imagenes con 9 markers lo hace ok
       gradient = sobel(rgb2gray(img))
-      segments_watershed = watershed(gradient, 
-                                     markers=9, 
-                                     compactness=0.0001,
-                                     mask=binary)
+      segments_watershed = watershed(gradient,markers=9,compactness=0.0001,mask=binary)
 
       '''
       Los segmentos son las zonas o regiones en las que ha separado la imagen
