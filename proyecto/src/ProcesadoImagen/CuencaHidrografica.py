@@ -57,7 +57,7 @@ class CuencaHidrografica():
       img = img_as_float(binary)
 
       segmentos=self.cuenca(img,binary)
-      segmentos_validos=self.descartarVacios(segmentos)
+      segmentos_validos=self.descartarVacios(segmentos,binary)
       self.descartarNoValidos(segmentos_validos,binary)
       combinaciones=self.combinarSegmentos(segmentos_validos,segmentos)
       combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
