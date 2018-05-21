@@ -55,12 +55,6 @@ class CuencaHidrografica():
       binary = gray < global_thresh
 
 
-      fig, ax = plt.subplots()
-      ax.imshow(image)
-
-     
-      img = img_as_float(binary)
-
       segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
       self.descartarNoValidos(segmentos_validos,segmentos)
