@@ -107,9 +107,9 @@ class TratamientoDeImagen():
     @classmethod
     def pixelRGB2LAB(self,pixel):
         r,g,b = pixel # pixel es una lista con 3 valores, los puedo guardar en 3 variables asi
-        rBase1 = base1(r)
-        gBase1 = base1(g)
-        bBase1 = base1(b)
+        rBase1 = self.base1(r)
+        gBase1 = self.base1(g)
+        bBase1 = self.base1(b)
 
 
         # rgb2lab espera una lista3D, así que le paso el pixel dentro 
