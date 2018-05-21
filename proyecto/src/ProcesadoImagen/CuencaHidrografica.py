@@ -50,7 +50,7 @@ class CuencaHidrografica():
       image=self.pr_LeeImagen.leer_imagen(image)
       self.reducirImagen(image)
       
-      gray=self.pr_TratamientoDeImagen.escala_grises(img)
+      gray=self.pr_TratamientoDeImagen.escala_grises(image)
       binary=self.pr_TratamientoDeImagen.binarizar(gray)
       invbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
      
