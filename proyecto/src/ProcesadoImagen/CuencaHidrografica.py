@@ -94,7 +94,7 @@ class CuencaHidrografica():
       segments_watershed = watershed(gradient, 
                                      markers=9, 
                                      compactness=0.0001,
-                                     mask=binary_global)
+                                     mask=binary)
 
       '''
       Los segmentos son las zonas o regiones en las que ha separado la imagen
@@ -134,11 +134,11 @@ class CuencaHidrografica():
 
           # saco tamaño del segmento y tamaño de la intersección con la mascara
           size_segment = (segmentos==i).sum()
-          size_interseccion = ((segmentos==i) & binary_global).sum()
+          size_interseccion = ((segmentos==i) & binary).sum()
 
           if size_segment>0:    
               ax[i][0].imshow(segmentos==i)
-              ax[i][1].imshow((segmentos==i) & binary_global)
+              ax[i][1].imshow((segmentos==i) & binary)
               print(size_interseccion,size_segment,size_interseccion/size_segment)
               if size_interseccion/size_segment>0.8: # el numero depende del numero de segmentos
                   segmentos_validos.append(i)
