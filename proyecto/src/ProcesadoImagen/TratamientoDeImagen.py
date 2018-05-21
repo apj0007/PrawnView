@@ -59,7 +59,7 @@ class TratamientoDeImagen():
     
     def escala_grises3(self,img,color): 
       imagenLab = rgb2lab(img)
-      colorLab = pixelRGB2LAB(color)
+      colorLab = self.pixelRGB2LAB(color)
       img_gris = abs(imagenLab-color).mean(axis=2)/255
       return img_gris
     
