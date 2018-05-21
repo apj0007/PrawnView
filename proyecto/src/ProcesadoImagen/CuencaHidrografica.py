@@ -56,11 +56,11 @@ class CuencaHidrografica():
      
       img = img_as_float(binary)
 
-      segmentos=self.cuenca(img)
+      segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos)
-      self.descartarNoValidos(segmentos_validos)
-      combinaciones=self.combinarSegmentos(segmentos_validos)
-      combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones)
+      self.descartarNoValidos(segmentos_validos,binary)
+      combinaciones=self.combinarSegmentos(segmentos_validos,segmentos)
+      combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
       
       return combinaciones_buenas
 
@@ -72,7 +72,7 @@ class CuencaHidrografica():
                 
 
     @classmethod            
-    def cuenca(self,img1):
+    def cuenca(self,img1,binary):
       img = img_as_float(img1)
 
       '''
@@ -112,7 +112,7 @@ class CuencaHidrografica():
       return segmentos
                 
     @classmethod
-    def descartarVacios(self,segmentos):
+    def descartarVacios(self,segmentos,binary):
       '''
       En cada ejecución puede haber segmentos vacios, o segmentos de más que lo que contengan sean
       regiones del fondo en vez de trozos de langostinos.
@@ -147,7 +147,7 @@ class CuencaHidrografica():
 
   
     @classmethod
-    def descartarNoValidos(self,segmentos_validos):         
+    def descartarNoValidos(self,segmentos_validos,segmentos):         
       '''
       Aquí muestro solo los válidos
 
@@ -187,7 +187,7 @@ class CuencaHidrografica():
       return combinaciones
     
     @classmethod
-    def encontratCombinacionesBuenas(self,combinaciones):
+    def encontratCombinacionesBuenas(self,combinaciones,segmentos):
       combinaciones_buenas = []
     
       fig, ax = plt.subplots(nrows=len(combinaciones), ncols=1, figsize=(10, 10))
