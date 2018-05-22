@@ -61,8 +61,6 @@ class CuencaHidrografica():
     
  
       self.pr_LeeImagen.muestra_imagenes(gray)
-      
-      self.pr_LeeImagen.muestra_imagenes(global_thresh)
       self.pr_LeeImagen.muestra_imagenes(binary)
 
       return combinaciones_buenas
