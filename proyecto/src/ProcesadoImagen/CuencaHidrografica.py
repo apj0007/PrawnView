@@ -42,7 +42,7 @@ class CuencaHidrografica():
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
         
     @classmethod        
-    def cuencaAutomatica(self,image):
+    def cuencaAutomatica(self,path):
       self.pr_LeeImagen=LeeImagen()
       self.pr_TratamientoDeImagen=TratamientoDeImagen        
         
