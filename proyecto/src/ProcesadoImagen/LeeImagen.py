@@ -19,7 +19,7 @@ class LeeImagen():
  
         @return: se deuelve la imagen ya leida en python
         """
-        img =imread(file)
+        img =imread(file)[0]
         return img
 
     @classmethod
