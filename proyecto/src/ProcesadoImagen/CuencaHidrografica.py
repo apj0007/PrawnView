@@ -44,32 +44,27 @@ class CuencaHidrografica():
     @classmethod        
     def cuencaAutomatica(self,image):
       self.pr_LeeImagen=LeeImagen()
-      self.pr_TratamientoDeImagen=TratamientoDeImagen
-      
-           
-      image=self.pr_LeeImagen.leer_imagen(image)
-      image=self.reducirImagen(image)
-      
-      ## uso un color anaranjado como referencia
-      gray = self.pr_TratamientoDeImagen.escala_grises3(image,[ 247,211,114])
-
-      global_thresh = self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
-      binary = gray < global_thresh
+      self.pr_TratamientoDeImagen=TratamientoDeImagen        
+        
+        
+      img=self.pr_LeeImagen.leer_imagen(path)
+      img=self.reducirImagen(img)
+      gray=self.pr_TratamientoDeImagen.escala_grises3(img,[ 247,211,114])
+      binary=self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
+      segmentos=self.cuenca(img,binary)
+      segmentos_validos=self.descartarVacios(segmentos,binary)
+      self.descartarNoValidos(segmentos_validos)
+      combinaciones=self.combinarSegmentos(segmentos,segmentos_validos)
+      combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
     
     
     
-
+ 
       self.pr_LeeImagen.muestra_imagenes(gray)
       
       self.pr_LeeImagen.muestra_imagenes(global_thresh)
       self.pr_LeeImagen.muestra_imagenes(binary)
 
-      segmentos=self.cuenca(image,binary)
-      segmentos_validos=self.descartarVacios(segmentos,binary)
-      self.descartarNoValidos(segmentos_validos,segmentos)
-      combinaciones=self.combinarSegmentos(segmentos_validos)
-      combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
-      
       return combinaciones_buenas
 
     @classmethod
@@ -152,7 +147,7 @@ class CuencaHidrografica():
 
   
     @classmethod
-    def descartarNoValidos(self,segmentos_validos,segmentos):         
+    def descartarNoValidos(self,segmentos,segmentos_validos):         
       '''
       Aquí muestro solo los válidos
 
