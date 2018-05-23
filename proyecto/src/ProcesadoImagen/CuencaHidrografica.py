@@ -14,6 +14,7 @@ import os
 from skimage.measure import label, regionprops
 import itertools
 import numpy as np
+from heapq import merge
 
 from skimage import io
 from skimage.transform import rescale
@@ -180,7 +181,13 @@ class CuencaHidrografica():
 
       El ejemplo lo hago con dos fragmentos, pero igual habría que hacer combinaciones de 1, de 2 y de 3
       '''
-      combinaciones = list(itertools.combinations(segmentos_validos, 2))
+      if(len(segmentos_validos)==2):
+        combinaciones = list(itertools.combinations(segmentos_validos, 2))
+      elif(len(segmentos_validos)>2):
+        combinaciones2 = list(itertools.combinations(segmentos_validos, 2))
+        combinaciones3 = list(itertools.combinations(segmentos_validos, 3))
+        combinaciones=list(merge(combinaciones2,combinaciones3))
+ 
       
       return combinaciones
     
