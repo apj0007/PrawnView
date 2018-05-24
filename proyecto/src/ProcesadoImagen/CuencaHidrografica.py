@@ -179,7 +179,7 @@ class CuencaHidrografica():
       El ejemplo lo hago con dos fragmentos, pero igual habría que hacer combinaciones de 1, de 2 y de 3
       '''
 
-     
+      comb=set()
       combinaciones1=set()
       if(len(segmentos_validos)==2):
         for j in range(len(segmentos_validos)):
