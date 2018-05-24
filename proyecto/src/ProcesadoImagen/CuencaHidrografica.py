@@ -197,7 +197,7 @@ class CuencaHidrografica():
         combinaciones=list(merge(combinaciones1,combinaciones2,combinaciones3))
       elif(len(segmentos_validos)==1):
         for j in range(len(segmentos_validos)):
-          x=(segmentos_validos[j],segmentos_validos[j]
+          x=(segmentos_validos[j],segmentos_validos[j])
           combinaciones1.add(x)
           combinaciones=combinaciones
     
