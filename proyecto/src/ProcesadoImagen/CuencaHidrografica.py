@@ -140,7 +140,7 @@ class CuencaHidrografica():
 
   
     @classmethod
-    def descartarNoValidos(self,segmentos,segmentos_valido,path):         
+    def descartarNoValidos(self,segmentos,segmentos_validos,path):         
       '''
       Aquí muestro solo los válidos
 
