@@ -28,9 +28,9 @@ class ProcesadorImagenAutomatico():
     #gray=self.pr_TratamientoDeImagen.escala_grises(img)
     #binary=self.pr_TratamientoDeImagen.binarizar(gray)
     invbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
-    sk=self.pr_TratamientoDeImagen.skeleton(binary)
+    sk=self.pr_TratamientoDeImagen.skeleton(invbin)
     ojo=self.pr_TratamientoRegiones.detectar_ojo(img)
-    centro_langostino,area_langostino=self.pr_TratamientoRegiones.detectar_region(img,invbin)
+    centro_langostino,area_langostino=self.pr_TratamientoRegiones.detectar_region(img,binary)
     centro_regiones,area_total_melanosis=self.pr_TratamientoRegiones.detectar_region(img,ojo)
 
     
