@@ -142,6 +142,7 @@ class CuencaHidrografica():
     @classmethod
     def descartarNoValidos(self,segmentos,segmentos_validos,path):
       areaRatio=set()
+      ar=set()
       '''
       Aquí muestro solo los válidos
 
@@ -164,8 +165,8 @@ class CuencaHidrografica():
 
       for i in range(len(segmentos_validos)):
           ax[i].imshow(segmentos==segmentos_validos[i])
-          a,b,c=FachadaCaracterísticas.ratio(path,segmentos==segmentos_validos[i])
-          areaRatio.add(a,c)
+          ar=FachadaCaracterísticas.ratio(path,segmentos==segmentos_validos[i])
+          areaRatio.add(ar)
       return areaRatio
     @classmethod
     def combinarSegmentos(self,segmentos_validos):
