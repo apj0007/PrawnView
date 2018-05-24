@@ -27,8 +27,8 @@ class FachadaCaracterísticas():
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
     
     @classmethod
-    def ratio(self,path):
+    def ratio(self,path,binary):
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
-      areag,aream=ProcesadorImagenAutomatico.ProcesadorAutomatico(path)
+      areag,aream=ProcesadorImagenAutomatico.ProcesadorAutomatico(path,binary)
       ratio=aream/areag
       return areag,aream,ratio
