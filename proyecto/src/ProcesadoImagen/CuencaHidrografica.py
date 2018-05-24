@@ -52,11 +52,11 @@ class CuencaHidrografica():
       img=self.reducirImagen(img)
       gray=self.pr_TratamientoDeImagen.escala_grises3(img,[ 247,211,114])
       binary=self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
-      segmentos=self.cuenca(img,binary)
+      img,segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
       #self.descartarNoValidos(segmentos,segmentos_validos)
       combinaciones=self.combinarSegmentos(segmentos_validos)
-      combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
+      img,combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
     
     
     
@@ -108,7 +108,7 @@ class CuencaHidrografica():
       ax.imshow(mark_boundaries(img, segments_watershed))        
       print("Número de segmentos: {}".format(len(np.unique(segments_watershed))))
                 
-      return segmentos
+      return img,segmentos
                 
     @classmethod
     def descartarVacios(self,segmentos,binary):
@@ -204,7 +204,7 @@ class CuencaHidrografica():
       return combinaciones
     
     @classmethod
-    def encontratCombinacionesBuenas(self,combinaciones,segmentos):
+    def encontratCombinacionesBuenas(self,img,combinaciones,segmentos):
       combinaciones_buenas = []
     
       fig, ax = plt.subplots(nrows=len(combinaciones), ncols=1, figsize=(10, 10))
