@@ -186,18 +186,18 @@ class CuencaHidrografica():
           x=(segmentos_validos[j],segmentos_validos[j])
           combinaciones1.add(x)
           combinaciones2 = list(itertools.combinations(segmentos_validos, 2))
-          combinaciones=list(merge(combinaciones1,combinaciones2))
+          comb=list(merge(combinaciones1,combinaciones2))
       elif(len(segmentos_validos)>2):
         combinaciones2 = list(itertools.combinations(segmentos_validos, 2))
         combinaciones3 = list(itertools.combinations(segmentos_validos, 3))
-        combinaciones=list(merge(combinaciones1,combinaciones2,combinaciones3))
+        comb=list(merge(combinaciones1,combinaciones2,combinaciones3))
       elif(len(segmentos_validos)==1):
         for j in range(len(segmentos_validos)):
           x=(segmentos_validos[j],segmentos_validos[j])
           combinaciones1.add(x)
-          combinaciones=combinaciones
+          comb=combinaciones
     
-      return combinaciones
+      return comb
     
     @classmethod
     def encontratCombinacionesBuenas(self,img,combinaciones,segmentos):
