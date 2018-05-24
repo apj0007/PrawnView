@@ -223,5 +223,20 @@ class CuencaHidrografica():
               combinaciones_buenas.append(combinaciones[i])
 
           ax[i].imshow(composicion)
+        
+          fig, ax = plt.subplots(nrows=len(combinaciones_buenas), ncols=2, figsize=(20, 20))
+
+
+          '''
+          De los segmentos combinados saco las características y se lo paso al clasificador
+          Que me va a decir cual es las combinaciones es langostino, cola, melanosis u otro
+
+          '''
+          for i in range(len(combinaciones_buenas)):
+              composicion = (segmentos==combinaciones_buenas[i][0]) | (segmentos==combinaciones_buenas[i][1])
+              ax[i][0].imshow(composicion)
+              copia = img.copy()
+              copia[np.invert(composicion)]=0    
+              ax[i][1].imshow(copia)
           
       return combinaciones_buenas
