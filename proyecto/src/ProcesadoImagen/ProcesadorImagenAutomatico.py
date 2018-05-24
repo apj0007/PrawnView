@@ -17,16 +17,16 @@ class ProcesadorImagenAutomatico():
 
 
   @classmethod
-  def ProcesadorAutomatico(self,path):
+  def ProcesadorAutomatico(self,binary):
 
     self.pr_LeeImagen=LeeImagen()
     self.pr_TratamientoDeImagen=TratamientoDeImagen()
     self.pr_TratamientoRegiones=TratamientoRegiones()
 
     
-    img=self.pr_LeeImagen.leer_imagen(path)
-    gray=self.pr_TratamientoDeImagen.escala_grises(img)
-    binary=self.pr_TratamientoDeImagen.binarizar(gray)
+    #img=self.pr_LeeImagen.leer_imagen(path)
+    #gray=self.pr_TratamientoDeImagen.escala_grises(img)
+    #binary=self.pr_TratamientoDeImagen.binarizar(gray)
     invbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
     sk=self.pr_TratamientoDeImagen.skeleton(binary)
     ojo=self.pr_TratamientoRegiones.detectar_ojo(img)
