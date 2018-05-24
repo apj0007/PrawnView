@@ -233,10 +233,10 @@ class CuencaHidrografica():
 
           '''    
       for i in range(len(combinaciones_buenas)):
-              composicion = (segmentos==combinaciones_buenas[i][0]) | (segmentos==combinaciones_buenas[i][1])
-              ax[i][0].imshow(composicion)
-              copia = img.copy()
-              copia[np.invert(composicion)]=0    
-              ax[i][1].imshow(copia)          
+          composicion = (segmentos==combinaciones_buenas[i][0]) | (segmentos==combinaciones_buenas[i][1])
+          ax[i][0].imshow(composicion)
+          copia = img.copy()
+          copia[np.invert(composicion)]=0    
+          ax[i][1].imshow(copia)          
           
       return combinaciones_buenas
