@@ -56,7 +56,7 @@ class CuencaHidrografica():
       segmentos_validos=self.descartarVacios(segmentos,binary)
       #self.descartarNoValidos(segmentos,segmentos_validos)
       combinaciones=self.combinarSegmentos(segmentos_validos)
-      img,combinaciones_buenas=self.encontratCombinacionesBuenas(combinaciones,segmentos)
+      combinaciones_buenas=self.encontratCombinacionesBuenas(img,combinaciones,segmentos)
     
     
     
