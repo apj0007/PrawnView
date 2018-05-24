@@ -35,7 +35,7 @@ class ProcesadorImagenAutomatico():
 
     
     self.pr_LeeImagen.muestra_imagenes(img)
-    self.pr_LeeImagen.muestra_imagenes(gray)
+    #self.pr_LeeImagen.muestra_imagenes(gray)
     self.pr_LeeImagen.muestra_imagenes(binary)
     self.pr_LeeImagen.muestra_imagenes(sk)
     
