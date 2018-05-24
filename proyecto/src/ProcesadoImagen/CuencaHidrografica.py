@@ -163,7 +163,7 @@ class CuencaHidrografica():
 
       for i in range(len(segmentos_validos)):
           ax[i].imshow(segmentos==segmentos_validos[i])
-          a,b,c=FachadaCaracterísticas.ratio(segmentos_validos[i])
+          a,b,c=FachadaCaracterísticas.ratio(segmentos==segmentos_validos[i])
     
     @classmethod
     def combinarSegmentos(self,segmentos_validos):
