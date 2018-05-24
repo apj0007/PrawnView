@@ -214,6 +214,26 @@ class CuencaHidrografica():
       Abajo combinaciones de 2 segmentos que se tocan
 
       '''
+
+
+      for i in range(len(combinaciones)):
+          print(i)
+          composicion = (segmentos==combinaciones[i][0]) | (segmentos==combinaciones[i][1])
+
+          label_img = label(composicion)
+          regions = regionprops(label_img)
+          if len(regions)==1:
+              combinaciones_buenas.append(combinaciones[i])
+              combinaciones_buenas
+          ax[i].imshow(composicion)
+
+    
+        
+     
+      '''
+      Abajo combinaciones de 2 segmentos que se tocan
+
+      '''
       for i in range(len(combinaciones)):
           composicion = (segmentos==combinaciones[i][0]) | (segmentos==combinaciones[i][1])
 
