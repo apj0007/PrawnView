@@ -17,7 +17,7 @@ class ProcesadorImagenAutomatico():
 
 
   @classmethod
-  def ProcesadorAutomatico(self,binary):
+  def ProcesadorAutomatico(self,img,binary):
 
     self.pr_LeeImagen=LeeImagen()
     self.pr_TratamientoDeImagen=TratamientoDeImagen()
