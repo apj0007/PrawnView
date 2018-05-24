@@ -58,7 +58,7 @@ class CuencaHidrografica():
       combinaciones=self.combinarSegmentos(segmentos_validos)
       combinaciones_buenas=self.encontratCombinacionesBuenas(img,combinaciones,segmentos)
 
-      return combinaciones_buenas,return areaRatio
+      return combinaciones_buenas,areaRatio
 
     @classmethod
     def reducirImagen(self,img1):
