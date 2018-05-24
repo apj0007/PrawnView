@@ -24,7 +24,7 @@ class ProcesadorImagenAutomatico():
     self.pr_TratamientoRegiones=TratamientoRegiones()
 
     
-    #img=self.pr_LeeImagen.leer_imagen(path)
+    img=self.pr_LeeImagen.leer_imagen(path)
     #gray=self.pr_TratamientoDeImagen.escala_grises(img)
     #binary=self.pr_TratamientoDeImagen.binarizar(gray)
     invbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
