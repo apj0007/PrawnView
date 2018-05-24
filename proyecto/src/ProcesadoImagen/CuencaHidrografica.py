@@ -229,22 +229,7 @@ class CuencaHidrografica():
 
     
         
-     
-      '''
-      Abajo combinaciones de 2 segmentos que se tocan
-
-      '''
-      for i in range(len(combinaciones)):
-          composicion = (segmentos==combinaciones[i][0]) | (segmentos==combinaciones[i][1])
-
-          label_img = label(composicion)
-          regions = regionprops(label_img)
-          if len(regions)==1:
-              combinaciones_buenas.append(combinaciones[i])
-
-          ax[i].imshow(composicion)
-        
-          fig, ax = plt.subplots(nrows=len(combinaciones_buenas), ncols=2, figsize=(20, 20))
+      fig, ax = plt.subplots(nrows=len(combinaciones_buenas), ncols=2, figsize=(20, 20))
 
 
       '''
