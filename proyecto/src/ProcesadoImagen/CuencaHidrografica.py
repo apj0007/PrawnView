@@ -57,12 +57,6 @@ class CuencaHidrografica():
       #self.descartarNoValidos(segmentos,segmentos_validos)
       combinaciones=self.combinarSegmentos(segmentos_validos)
       combinaciones_buenas=self.encontratCombinacionesBuenas(img,combinaciones,segmentos)
-    
-    
-    
- 
-      self.pr_LeeImagen.muestra_imagenes(gray)
-      self.pr_LeeImagen.muestra_imagenes(binary)
 
       return combinaciones_buenas
 
@@ -181,14 +175,13 @@ class CuencaHidrografica():
 
       El ejemplo lo hago con dos fragmentos, pero igual habría que hacer combinaciones de 1, de 2 y de 3
       '''
-      from heapq import merge
+
      
       combinaciones1=set()
       if(len(segmentos_validos)==2):
         for j in range(len(segmentos_validos)):
           x=(segmentos_validos[j],segmentos_validos[j])
           combinaciones1.add(x)
-          combinaciones1
           combinaciones2 = list(itertools.combinations(segmentos_validos, 2))
           combinaciones=list(merge(combinaciones1,combinaciones2))
       elif(len(segmentos_validos)>2):
