@@ -54,7 +54,7 @@ class CuencaHidrografica():
       binary=self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
       img,segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
-      self.descartarNoValidos(segmentos,segmentos_validos,path)
+      areaRatio=self.descartarNoValidos(segmentos,segmentos_validos,path)
       combinaciones=self.combinarSegmentos(segmentos_validos)
       combinaciones_buenas=self.encontratCombinacionesBuenas(img,combinaciones,segmentos)
 
@@ -140,7 +140,8 @@ class CuencaHidrografica():
 
   
     @classmethod
-    def descartarNoValidos(self,segmentos,segmentos_validos,path):         
+    def descartarNoValidos(self,segmentos,segmentos_validos,path):
+      areaRatio=set()
       '''
       Aquí muestro solo los válidos
 
@@ -164,7 +165,8 @@ class CuencaHidrografica():
       for i in range(len(segmentos_validos)):
           ax[i].imshow(segmentos==segmentos_validos[i])
           a,b,c=FachadaCaracterísticas.ratio(path,segmentos==segmentos_validos[i])
-    
+          areaRatio.add(a,c)
+      return areaRatio
     @classmethod
     def combinarSegmentos(self,segmentos_validos):
       '''
@@ -238,3 +240,5 @@ class CuencaHidrografica():
           ax[i][1].imshow(copia)          
           
       return combinaciones_buenas
+    
+    return areaRatio
