@@ -7,6 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1UmS7W-fvGkWMP3hreWeE39CwpDBv_xMt
 """
 
+from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
+from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
 
 class FachadaCaracterísticas():
@@ -25,6 +27,16 @@ class FachadaCaracterísticas():
       los objetos que tendremos que usar mas adelante en la clase.
       """
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
+    
+    @classmethod
+    def devolverBinario(self,path):
+      self.pr_LeeImagen=LeeImagen()
+      self.pr_TratamientoDeImagen=TratamientoDeImagen()
+      img=self.pr_LeeImagen.leer_imagen(path)
+      gray=self.pr_TratamientoDeImagen.escala_grises(img)
+      binary=self.pr_TratamientoDeImagen.binarizar(gray)
+      return img,gray,binary
+    
     
     @classmethod
     def ratio(self,path,binary):
