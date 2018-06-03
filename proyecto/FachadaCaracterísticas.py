@@ -11,6 +11,7 @@ from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
+from PrawnView.proyecto.src.ProcesadoImagen.CuencaHidrografica import CuencaHidrografica
 
 class FachadaCaracterísticas():
     """
@@ -30,7 +31,8 @@ class FachadaCaracterísticas():
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
       self.pr_LeeImagen=LeeImagen()
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
-      self.TratamientoRegiones=TratamientoRegiones()
+      self.pr_TratamientoRegiones=TratamientoRegiones()
+      self.pr_CuencaHidrografica=CuencaHidrografica()
     
     @classmethod
     def devolverBinario(self,path):
@@ -59,6 +61,16 @@ class FachadaCaracterísticas():
       sk=self.pr_TratamientoDeImagen.skeleton(binary)
         
       return sk
+
+
+    @classmethod
+    def devolverSegmentos(self,image,binary):
+      self.pr_CuencaHidrografica=CuencaHidrografica()
+
+      im,seg=self.pr_CuencaHidrografica.cuenca((image,binary)
+
+      return im,seg
+   
     
     @classmethod
     def ratio(self,path,binary):
