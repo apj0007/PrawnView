@@ -25,7 +25,7 @@ from skimage.util import img_as_float
 
 from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
-from PrawnView.proyecto.FachadaCaracterísticas import FachadaCaracterísticas
+#from PrawnView.proyecto.FachadaCaracterísticas import FachadaCaracterísticas
 
 class CuencaHidrografica():
     """
