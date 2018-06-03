@@ -10,6 +10,7 @@ Original file is located at
 from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
+from PrawnView.proyecto.src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
 
 class FachadaCaracterísticas():
     """
@@ -27,20 +28,36 @@ class FachadaCaracterísticas():
       los objetos que tendremos que usar mas adelante en la clase.
       """
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
+      self.pr_LeeImagen=LeeImagen()
+      self.pr_TratamientoDeImagen=TratamientoDeImagen()
+      self.TratamientoRegiones=TratamientoRegiones()
     
     @classmethod
     def devolverBinario(self,path):
       self.pr_LeeImagen=LeeImagen()
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
+        
       img=self.pr_LeeImagen.leer_imagen(path)
       gray=self.pr_TratamientoDeImagen.escala_grises(img)
       binary=self.pr_TratamientoDeImagen.binarizar(gray)
+    
       return img,gray,binary
     
     
     @classmethod
+    def devolverMelanosis(self,path):
+      self.pr_TratamientoRegiones=pr_TratamientoRegiones()
+    
+      mel=self.pr_TratamientoRegiones.detectar_ojo(path)
+        
+    return mel
+    
+    @classmethod
     def ratio(self,path,binary):
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
+    
       areag,aream=ProcesadorImagenAutomatico.ProcesadorAutomatico(path,binary)
+        
       ratio=aream/areag
+    
       return areag,ratio
