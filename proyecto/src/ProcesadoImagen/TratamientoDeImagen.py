@@ -58,9 +58,11 @@ class TratamientoDeImagen():
     #lo que fuese fondo sería oscuro en la imagen de salida
     
     def escala_grises3(self,img,color): 
+      img=self.elimina_ruido(img)
       imagenLab = rgb2lab(img)
       colorLab = self.pixelRGB2LAB(color)
       img_gris = abs(imagenLab-color).mean(axis=2)/255
+      
       return img_gris
     
     @classmethod
