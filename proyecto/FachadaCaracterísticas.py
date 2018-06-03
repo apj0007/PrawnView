@@ -41,7 +41,7 @@ class FachadaCaracterísticas():
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
         
       img=self.pr_LeeImagen.leer_imagen(path)
-      gray=self.pr_TratamientoDeImagen.escala_grises(img)
+      gray=self.pr_TratamientoDeImagen.escala_grises3(img,[ 247,211,114])
       binary=self.pr_TratamientoDeImagen.binarizar(gray)
     
       return img,gray,binary
