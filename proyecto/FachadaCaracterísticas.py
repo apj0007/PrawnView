@@ -50,7 +50,7 @@ class FachadaCaracterísticas():
     
       mel=self.pr_TratamientoRegiones.detectar_ojo(path)
         
-    return mel
+      return mel
     
     @classmethod
     def ratio(self,path,binary):
