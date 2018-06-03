@@ -99,7 +99,7 @@ class CuencaHidrografica():
       #fig, ax = plt.subplots()
       #ax.imshow(mark_boundaries(img, segments_fz))
 
-      f#ig, ax = plt.subplots()
+      #fig, ax = plt.subplots()
       #ax.imshow(mark_boundaries(img, segments_watershed))        
       print("Número de segmentos: {}".format(len(np.unique(segments_watershed))))
                 
