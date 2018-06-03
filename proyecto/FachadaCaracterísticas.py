@@ -49,7 +49,7 @@ class FachadaCaracterísticas():
       self.pr_TratamientoRegiones=TratamientoRegiones()
     
       imgBN=self.pr_TratamientoRegiones.detectar_ojo(img)
-      mel=self.pr_TratamientoRegiones.detectar_region(self,img,imgBN)
+      mel=self.pr_TratamientoRegiones.detectar_region(img,imgBN)
         
       return mel
     
