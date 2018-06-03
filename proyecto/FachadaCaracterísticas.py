@@ -24,7 +24,7 @@ class FachadaCaracterísticas():
     @var estad: Instancia de la clase que se encarga de lasestadisticas.   
     """
 
-    def __init__(self,mediador,idioma):
+    def __init__(self):
       """
       Constructor de la clase FachadaEntradaSalida que inicializa y prepara todos
       los objetos que tendremos que usar mas adelante en la clase.
