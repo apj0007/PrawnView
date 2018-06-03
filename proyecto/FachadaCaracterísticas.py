@@ -48,8 +48,7 @@ class FachadaCaracterísticas():
     def devolverMelanosis(self,img):
       self.pr_TratamientoRegiones=TratamientoRegiones()
     
-      imgBN=self.pr_TratamientoRegiones.detectar_ojo(img)
-      mel=self.pr_TratamientoRegiones.detectar_region(img,imgBN)
+      mel=self.pr_TratamientoRegiones.detectar_ojo(img)
         
       return mel
     
