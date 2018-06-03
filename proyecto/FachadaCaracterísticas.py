@@ -58,7 +58,7 @@ class FachadaCaracterísticas():
     
       sk=self.pr_TratamientoDeImagen.skeleton(binary)
         
-    return sk
+      return sk
     
     @classmethod
     def ratio(self,path,binary):
