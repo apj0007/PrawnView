@@ -3,3 +3,4 @@ from PrawnView.proyecto.src.ProcesadoImagen.EntradaZip import EntradaZip
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
 from PrawnView.proyecto.src.ProcesadoImagen.ProcesadorImagenAutomatico import ProcesadorImagenAutomatico
+from PrawnView.proyecto.src.ProcesadoImagen.CuencaHidrografica import CuencaHidrografica
