@@ -67,7 +67,7 @@ class FachadaCaracterísticas():
     def devolverSegmentos(self,image,binary):
       self.pr_CuencaHidrografica=CuencaHidrografica()
 
-      im,seg=self.pr_CuencaHidrografica.cuenca((image,binary)
+      im,seg=self.pr_CuencaHidrografica.cuenca(image,binary)
 
       return im,seg
    
