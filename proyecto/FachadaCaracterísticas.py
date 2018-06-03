@@ -51,6 +51,14 @@ class FachadaCaracterísticas():
       mel=self.pr_TratamientoRegiones.detectar_ojo(img)
         
       return mel
+
+    @classmethod
+    def devolverSkeleton(self,binary):
+      self.pr_TratamientoDeImagen=TratamientoDeImagen()
+    
+      sk=self.pr_TratamientoDeImagen.skeleton(binary)
+        
+    return sk
     
     @classmethod
     def ratio(self,path,binary):
