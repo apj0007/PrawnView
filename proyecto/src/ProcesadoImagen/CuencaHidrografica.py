@@ -165,7 +165,10 @@ class CuencaHidrografica():
 
       for i in range(len(segmentos_validos)):
           ax[i].imshow(segmentos==segmentos_validos[i])
-          ar=FachadaCaracterísticas.ratio(path,segmentos==segmentos_validos[i])
+          self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
+          areag,aream=ProcesadorImagenAutomatico.ProcesadorAutomatico(path,segmentos==segmentos_validos[i])
+          ar=aream/areag
+          #ar=FachadaCaracterísticas.ratio(path,segmentos==segmentos_validos[i])
           areaRatio.add(ar)
       return areaRatio
     @classmethod
