@@ -45,10 +45,11 @@ class FachadaCaracterísticas():
     
     
     @classmethod
-    def devolverMelanosis(self,path):
+    def devolverMelanosis(self,img):
       self.pr_TratamientoRegiones=TratamientoRegiones()
     
-      mel=self.pr_TratamientoRegiones.detectar_ojo(path)
+      imgBN=self.pr_TratamientoRegiones.detectar_ojo(img)
+      mel=self.pr_TratamientoRegiones.detectar_region(self,img,imgBN)
         
       return mel
     
