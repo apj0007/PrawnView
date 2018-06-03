@@ -38,7 +38,7 @@ class CuencaHidrografica():
     @var estad: Instancia de la clase que se encarga de lasestadisticas.   
     """
 
-    def __init__():
+    def __init__(self):
       self.pr_ProcesadorImagenAutomatico=ProcesadorImagenAutomatico()
       self.pr_LeeImagen=LeeImagen()
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
