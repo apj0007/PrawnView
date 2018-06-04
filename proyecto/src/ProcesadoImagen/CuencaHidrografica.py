@@ -52,7 +52,7 @@ class CuencaHidrografica():
       img=self.pr_LeeImagen.leer_imagen(path)
       img=self.reducirImagen(img)
       gray=self.pr_TratamientoDeImagen.escala_grises3(img,[ 247,211,114])
-      binary=self.pr_TratamientoDeImagen.binarizar(gray)
+      binary=self.pr_TratamientoDeImagen.invertirbinarizar1(self.pr_TratamientoDeImagen.binarizar(gray))
       img,segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
       areaRatio=self.descartarNoValidos(segmentos,segmentos_validos,path)
