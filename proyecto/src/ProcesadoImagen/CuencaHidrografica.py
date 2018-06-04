@@ -56,7 +56,7 @@ class CuencaHidrografica():
       inbin=self.pr_TratamientoDeImagen.invertirbinarizar1(binary)
       img,segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
-      areaRatio=self.descartarNoValidos(segmentos,segmentos_validos,path)
+      #areaRatio=self.descartarNoValidos(segmentos,segmentos_validos,path)
       combinaciones=self.combinarSegmentos(segmentos_validos)
       combinaciones_buenas=self.encontratCombinacionesBuenas(img,combinaciones,segmentos)
 
