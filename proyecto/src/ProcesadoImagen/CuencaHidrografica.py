@@ -16,7 +16,7 @@ import itertools
 import numpy as np
 from heapq import merge
 
-from skimage import io
+from skimage import io,color,util
 from skimage.transform import rescale
 from skimage.color import rgb2lab,rgb2gray
 from skimage.filters import threshold_otsu, threshold_local,sobel
@@ -56,7 +56,7 @@ class CuencaHidrografica():
       img,segmentos=self.cuenca(img,binary)
       segmentos_validos=self.descartarVacios(segmentos,binary)
       areaRatio=self.descartarNoValidos(segmentos,segmentos_validos,path)
-      combinaciones=self.combinarSegmentos(segmentos_validos)
+      combinaciones=self.combinarSegmentos(util.invert(segmentos_validos])
       combinaciones_buenas=self.encontratCombinacionesBuenas(img,combinaciones,segmentos)
 
       return combinaciones_buenas,areaRatio
