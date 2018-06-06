@@ -14,7 +14,7 @@ from PrawnView.proyecto.src.ProcesadoImagen.ProcesadorImagenAutomatico import Pr
 from PrawnView.proyecto.src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
 from PrawnView.proyecto.src.ProcesadoImagen.CuencaHidrografica import CuencaHidrografica
 
-class FachadaCaracterísticas():
+class FachadaCaracteristicas():
     """
     Clase fachada para el mediador que se encargara de la entrada salida por ficheros.
     @var mediador: Instancia del mediador de pestañas que crea dicha fachada.
