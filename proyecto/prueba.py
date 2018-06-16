@@ -16,15 +16,17 @@ poster template A0
 
 
 '''
-
+from PIL import Image
 import numpy as np
 from PIL.ImageQt import ImageQt
 from skimage.io import imread
 from skimage import io
+from skimage.segmentation import mark_boundaries
 import sys
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+import matplotlib.pyplot as plt 
 
 #------------------------------------------------------------------------------------------------------------
 
@@ -70,36 +72,56 @@ class FachadaCaracteristicas():
       self.pr_LeeImagen=LeeImagen()
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
       print('PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP',path)
-      img=self.pr_LeeImagen.leer_imagen(path)
-      gray=self.pr_TratamientoDeImagen.escala_grises3(img,[247,211,114])
+
+      img1=self.pr_LeeImagen.leer_imagen(path)
+      self.pr_LeeImagen.muestra_imagenes(img1)
+      img = Image.fromarray(img1)
+      img.save('img.jpg')
+
+      gray=self.pr_TratamientoDeImagen.escala_grises3(img1,[247,211,114])
+      self.pr_LeeImagen.muestra_imagenes(gray)
+      #gray = Image.fromarray(gray1)
+      #gray1.save('gray.jpg')
+
       binary=self.pr_TratamientoDeImagen.binarizar(gray)
-      return binary
+      #binary = Image.fromarray(binary1)
+      #binary1.save('binary.jpg')
+      print('binaryyyyyy__________',binary)
+      self.pr_LeeImagen.muestra_imagenes(binary)
+
+      return img1,gray,binary
   
     
     @classmethod
     def devolverMelanosis(self,img):
       self.pr_TratamientoRegiones=TratamientoRegiones()
-    
+      self.pr_LeeImagen=LeeImagen()
+
       mel=self.pr_TratamientoRegiones.detectar_ojo(img)
+      #self.pr_LeeImagen.muestra_imagenes(mel)
         
       return mel
 
     @classmethod
     def devolverSkeleton(self,binary):
+      self.pr_LeeImagen=LeeImagen()
       self.pr_TratamientoDeImagen=TratamientoDeImagen()
-    
       sk=self.pr_TratamientoDeImagen.skeleton(binary)
-        
+      self.pr_LeeImagen.muestra_imagenes(sk)        
       return sk
 
 
     @classmethod
-    def devolverSegmentos(self,image,binary):
+    def devolverSegmentos(self,path,image,gray,binary):
       self.pr_CuencaHidrografica=CuencaHidrografica()
-      im,seg=CuencaHidrografica.cuenca(image,binary)
-      return im
-      #return im,seg
-   
+      self.pr_LeeImagen=LeeImagen()
+      
+      imseg=CuencaHidrografica.cuencaAutomatica(path)
+      #imseg=mark_boundaries(image,seg)
+      #self.pr_LeeImagen.muestra_imagenes(imseg)
+
+      
+      #segmentos_validos=CuencaHidrografica.descartarVacios(seg,inbin)''  
     
     @classmethod
     def devolverAreasRatio(self,path,binary):
@@ -140,27 +162,35 @@ class Mediator:
 
     def carga(self):
         print('Carga imagen')
-        pixmap,_= QFileDialog.getOpenFileName(self.parent,"QFileDialog.getOpenFileName()", "","All Files (*)",'/home')
         
         imagePath = QFileDialog.getOpenFileName(self.parent,"QFileDialog.getOpenFileName()", "","All Files (*)",'/home')[0]
-        print('lololololol',pixmap)
-        pixmap = QPixmap(pixmap)
+
+        pixmap = QPixmap(imagePath)
         self.label1.setPixmap(pixmap)    
 
-        binary=self.fachada.devolverBinario(imagePath)
-        im = QImage(binary, 200, 200, QImage.Format_Mono)
-        im2=QPixmap.fromImage(im)
+        img,gray,binary=self.fachada.devolverBinario(imagePath)
+        '''
+        #im = QImage(binary, 200, 200, QImage.Format_Mono)
+        im2=QPixmap.fromImage(QImage(binary,QImage.Format_ARGB32))
+
+
+        im = im.convert("RGBA")
+        data = im.tobytes("raw","RGBA")
+        qim = QImage(data, im.size[0], im.size[1],QImage.Format_ARGB32)
+        pix = QPixmap.fromImage(qim)
+
         
-        self.label2.setPixmap(QPixmap('/media/andres/TOSHIBA EXT/PrawnView/proyecto/1_2.jpg'))
+        print('imagePath_________',imagePath)
+        #self.label2.setPixmap(im2)
+        '''
+        segmenta=self.fachada.devolverSegmentos(imagePath,img,gray,binary)
+        #self.label3.setPixmap(segmenta) 
 
-        segmenta=self.fachada.devolverSegmentos(pixmap,binary)
-        self.label3.setPixmap(segmenta) 
-
-        melanosis=self.fachada.devolverMelanosis(pixmap)
-        self.label4.setPixmap(melanosis) 
+        #melanosis=self.fachada.devolverMelanosis(binary)
+        #self.label4.setPixmap(melanosis) 
 
         skeleton=self.fachada.devolverSkeleton(binary)
-        self.label5.setPixmap(skeleton) 
+        #self.label5.setPixmap(skeleton) 
   
 
 
