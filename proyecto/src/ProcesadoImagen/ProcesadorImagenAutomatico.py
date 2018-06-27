@@ -1,7 +1,7 @@
-from src.ProcesadoImagen.LeeImagen import LeeImagen
-from src.ProcesadoImagen.EntradaZip import EntradaZip
-from src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
-from src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
+from PrawnView.proyecto.src.ProcesadoImagen.LeeImagen import LeeImagen
+from PrawnView.proyecto.src.ProcesadoImagen.EntradaZip import EntradaZip
+from PrawnView.proyecto.src.ProcesadoImagen.TratamientoDeImagen import TratamientoDeImagen
+from PrawnView.proyecto.src.ProcesadoImagen.TratamientoRegiones import TratamientoRegiones
 
 
 
